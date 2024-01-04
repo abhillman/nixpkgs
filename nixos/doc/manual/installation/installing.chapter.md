@@ -231,7 +231,7 @@ The recommended partition scheme differs depending if the computer uses
 []{#sec-installation-partitioning-UEFI} <!-- legacy anchor -->
 
 Here's an example partition scheme for UEFI, using `/dev/sda` as the
-device.
+device. List available devices using `lsblk` as `/dev/sda` may not exist.
 
 ::: {.note}
 You can safely ignore `parted`'s informational message about needing to
@@ -280,7 +280,7 @@ Once complete, you can follow with
 []{#sec-installation-partitioning-MBR} <!-- legacy anchor -->
 
 Here's an example partition scheme for Legacy Boot, using `/dev/sda` as
-the device.
+the device. List available devices using `lsblk` as `/dev/sda` may not exist.
 
 ::: {.note}
 You can safely ignore `parted`'s informational message about needing to
@@ -534,8 +534,8 @@ Use the following commands:
 
 To summarise, [Example: Commands for Installing NixOS on `/dev/sda`](#ex-install-sequence)
 shows a typical sequence of commands for installing NixOS on an empty hard
-drive (here `/dev/sda`). [Example: NixOS Configuration](#ex-config) shows a
-corresponding configuration Nix expression.
+drive (here `/dev/sda`; use `lsblk` to print available devices on your system).
+[Example: NixOS Configuration](#ex-config) shows a corresponding configuration Nix expression.
 
 ::: {#ex-partition-scheme-MBR .example}
 ### Example partition schemes for NixOS on `/dev/sda` (MBR)
